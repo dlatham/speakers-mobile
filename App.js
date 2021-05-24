@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import type {Node} from 'react';
 import {
@@ -21,10 +13,12 @@ import {
 import {
   Colors,
   DebugInstructions,
-  Header,
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+import Header from './src/components/header'
+import BottomButton from './src/components/bottom_button'
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -60,19 +54,24 @@ const App: () => Node = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <View style={backgroundStyle}>
+      {/*<StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />*/}
+      <StatusBar
+        animated={true}
+        backgroundColor="#61dafb"
+        barStyle={'light-content'}
+        showHideTransition={'fade'}
+        hidden={false} />
       <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
+        contentInsetAdjustmentBehavior="never"
         style={backgroundStyle}>
-        <Header />
+        <Header text={'Get Started'} image={require('./src/assets/header.png')} />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
+            Ensure your speakers are plugged in and powered on. You should see a <Text style={styles.highlight}>blinking blue light</Text> indicating the speakers are ready to connect.
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
@@ -86,7 +85,8 @@ const App: () => Node = () => {
           <LearnMoreLinks />
         </View>
       </ScrollView>
-    </SafeAreaView>
+      <BottomButton text="Speakers are on" />
+    </View>
   );
 };
 
