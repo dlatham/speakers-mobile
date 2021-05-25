@@ -13,12 +13,12 @@ import {
 import {
   Colors,
   DebugInstructions,
-  LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
 import Header from './src/components/header'
 import BottomButton from './src/components/bottom_button'
+import ScannerModal from './src/components/scanner_modal'
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -51,7 +51,10 @@ const App: () => Node = () => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1
   };
+
+  var showScanner = false;
 
   return (
     <View style={backgroundStyle}>
@@ -62,6 +65,7 @@ const App: () => Node = () => {
         barStyle={'light-content'}
         showHideTransition={'fade'}
         hidden={false} />
+      <ScannerModal visible={showScanner} />
       <ScrollView
         contentInsetAdjustmentBehavior="never"
         style={backgroundStyle}>
@@ -73,19 +77,15 @@ const App: () => Node = () => {
           <Section title="Step One">
             Ensure your speakers are plugged in and powered on. You should see a <Text style={styles.highlight}>blinking blue light</Text> indicating the speakers are ready to connect.
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <Section title="Step Two">
+            Click the button below to connect to your speakers and begin the configuration process.
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
+          <Section title="Need Help?">
+            Here is some text about how to troubleshoot a connection or get additional help outside of the app maybe.
           </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
         </View>
       </ScrollView>
-      <BottomButton text="Speakers are on" />
+      <BottomButton text="CONNECT" onClick={showScanner = true} />
     </View>
   );
 };
