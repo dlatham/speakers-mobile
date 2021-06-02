@@ -14,7 +14,7 @@ class BottomButton extends React.Component {
           left: 0,
           backgroundColor: '#000000'
         }}>
-        <Button title={this.props.text} color="#FFFFFF" style={{height: 100}} />
+        <Button title={this.props.text} color="#FFFFFF" style={{height: 100}} onClick={(e)=>{console.log(e)}} />
       </View>
     );
   }

@@ -51,6 +51,10 @@
 	</array>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Required to communicate with your speakers during setup</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Feather.ttf</string>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

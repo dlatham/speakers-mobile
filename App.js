@@ -8,17 +8,12 @@ import {
   Text,
   useColorScheme,
   View,
+  Button
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 import Header from './src/components/header'
 import BottomButton from './src/components/bottom_button'
-import ScannerModal from './src/components/scanner_modal'
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -28,7 +23,7 @@ const Section = ({children, title}): Node => {
         style={[
           styles.sectionTitle,
           {
-            color: isDarkMode ? Colors.white : Colors.black,
+            color: isDarkMode ? '#000000' : '#FFFFFF',
           },
         ]}>
         {title}
@@ -37,7 +32,7 @@ const Section = ({children, title}): Node => {
         style={[
           styles.sectionDescription,
           {
-            color: isDarkMode ? Colors.light : Colors.dark,
+            color: isDarkMode ? '#000000' : '#FFFFFF',
           },
         ]}>
         {children}
@@ -50,11 +45,13 @@ const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: isDarkMode ? '#000000' : '#FFFFFF',
     flex: 1
   };
 
-  var showScanner = false;
+  const [scanner, setScanner] = React.useState(false)
+  const showScanner = () => setScanner(true)
+  const hideScanner = () => setScanner(false)
 
   return (
     <View style={backgroundStyle}>
@@ -65,14 +62,13 @@ const App: () => Node = () => {
         barStyle={'light-content'}
         showHideTransition={'fade'}
         hidden={false} />
-      <ScannerModal visible={showScanner} />
       <ScrollView
         contentInsetAdjustmentBehavior="never"
         style={backgroundStyle}>
         <Header text={'Get Started'} image={require('./src/assets/header.png')} />
         <View
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            backgroundColor: isDarkMode ? '#000000' : '#FFFFFF',
           }}>
           <Section title="Step One">
             Ensure your speakers are plugged in and powered on. You should see a <Text style={styles.highlight}>blinking blue light</Text> indicating the speakers are ready to connect.
@@ -85,7 +81,7 @@ const App: () => Node = () => {
           </Section>
         </View>
       </ScrollView>
-      <BottomButton text="CONNECT" onClick={showScanner = true} />
+      <Button style={styles.bottomButton} title="CONNECT" onClick={showScanner} />
     </View>
   );
 };
@@ -107,6 +103,14 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  bottomButton: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    height: 45,
+    backgroundColor: 'black'
+  }
 });
 
 export default App;

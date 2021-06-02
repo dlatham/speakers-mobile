@@ -13,6 +13,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		98D0031C265B732300440CFA /* ble_file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0031B265B732300440CFA /* ble_file.swift */; };
+		98D00385265DCA7600440CFA /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98D00383265DCA7600440CFA /* Feather.ttf */; };
+		98D0038E265DCAF800440CFA /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98D0038C265DCAF800440CFA /* EvilIcons.ttf */; };
 		AE4AE3FCAF5351A7B5459427 /* libPods-SpeakersMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB938B8A2E7DF17E85FDD32 /* libPods-SpeakersMobile.a */; };
 		E2C8E6541B5F80DB663F6C7D /* libPods-SpeakersMobile-SpeakersMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF2852B596C3531CFF795084 /* libPods-SpeakersMobile-SpeakersMobileTests.a */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		85595C74322E07C710659F75 /* Pods-SpeakersMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeakersMobile.release.xcconfig"; path = "Target Support Files/Pods-SpeakersMobile/Pods-SpeakersMobile.release.xcconfig"; sourceTree = "<group>"; };
 		98D0031A265B732200440CFA /* SpeakersMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeakersMobile-Bridging-Header.h"; sourceTree = "<group>"; };
 		98D0031B265B732300440CFA /* ble_file.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ble_file.swift; sourceTree = "<group>"; };
+		98D00383265DCA7600440CFA /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		98D0038C265DCAF800440CFA /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		E61F48BDF1F79D4C66D53558 /* Pods-SpeakersMobile-SpeakersMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeakersMobile-SpeakersMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-SpeakersMobile-SpeakersMobileTests/Pods-SpeakersMobile-SpeakersMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FF2852B596C3531CFF795084 /* libPods-SpeakersMobile-SpeakersMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpeakersMobile-SpeakersMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +104,7 @@
 		13B07FAE1A68108700A75B9A /* SpeakersMobile */ = {
 			isa = PBXGroup;
 			children = (
+				98D00382265DCA2600440CFA /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -151,6 +156,15 @@
 				00E356EE1AD99517003FC87E /* SpeakersMobileTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		98D00382265DCA2600440CFA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				98D0038C265DCAF800440CFA /* EvilIcons.ttf */,
+				98D00383265DCA7600440CFA /* Feather.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +254,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D00385265DCA7600440CFA /* Feather.ttf in Resources */,
+				98D0038E265DCAF800440CFA /* EvilIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
